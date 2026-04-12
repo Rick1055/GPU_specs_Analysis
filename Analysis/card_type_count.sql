@@ -1,3 +1,17 @@
+/*
+Question:How do the three modern giants-NVIDIA,AMD,Intel-distribute their graphics card models across different 
+         memory capacity tiers?
+- Utilizes CTEs with CASE statement to bucket GPUs into four distinct tiers('Entry tiers','Mid Level','High Level','Enthusiast')
+  based on raw memory size and whether the chip is an integrated processor.
+- Filters the dataset to focus exclusively on the current modern market.It intentionally omits legacy manufactuers to prevent decades-old,
+  low-VRAM hardware from artificially inflating and skewing the data into on of the buckets favours.Read below for more information
+- Aggregates and counts the number of distinct GPU models produced one of the aforementioned manufacturers and puts them into one of the buckets.
+- Why? This analysis reveals the product volume strategies of the top hardware manufacturers. It provides a quantitative breakdown of market 
+       saturation—showing exactly how heavily companies blanket the entry-level market with volume, versus how many specialized models they 
+       dedicate to the lucrative, high-margin enthusiast tier. By purposefully cleaning the data of legacy manufacturers, the resulting insights 
+       accurately reflect the relevant, modern competitive landscape.
+
+*/
 WITH card_type AS
 (
     SELECT

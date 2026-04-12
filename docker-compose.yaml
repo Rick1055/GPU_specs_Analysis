@@ -6,7 +6,7 @@ services:
     container_name: nvidia_postgres
     environment:
       POSTGRES_USER: Rick
-      POSTGRES_PASSWORD: Sneshi0708
+      POSTGRES_PASSWORD: your_password_here
       POSTGRES_DB: gpu_db
     ports:
       - "6000:5432"
@@ -19,8 +19,8 @@ services:
     image: dpage/pgadmin4
     container_name: pgadmin_ui
     environment:
-      PGADMIN_DEFAULT_EMAIL: dsaptarshi116@gmail.com
-      PGADMIN_DEFAULT_PASSWORD: Sneshi0708
+      PGADMIN_DEFAULT_EMAIL: admin@example.com #Change this line with some other email which is convinient to you
+      PGADMIN_DEFAULT_PASSWORD: your_password_here
     ports:
       - "8080:80"
     networks:
